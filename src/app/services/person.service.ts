@@ -14,7 +14,11 @@ export class PersonService {
   constructor
   (
     private http: HttpClient,
-  ) { }
+  ) {
+    var _localStorage: string = localStorage.getItem('persons') as string;
+    if (_localStorage)
+      this.persons = JSON.parse(_localStorage);
+  }
 
   getPersons(): Observable<any> {
     return this.http.get(environment.apiUrl);
@@ -22,6 +26,7 @@ export class PersonService {
 
   addPerson(person: Person): void {
     this.persons.push(person);
+    localStorage.setItem('persons', JSON.stringify(this.persons));
   }
 
   returnPersons(): Person[] {

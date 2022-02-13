@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
     name: '',
     age: '',
     gender: '',
-    doc: ''
+    doc: null
   };
 
   constructor(

@@ -20,6 +20,10 @@ export class TableComponent implements OnInit {
   }
 
   getPersons(): void {
+    //Get previusly persons
+    this.persons = this.personService.returnPersons();
+
+    //Get of Api
     this.personService.getPersons().subscribe(value => {
       let persons = value.results;
 
@@ -30,13 +34,11 @@ export class TableComponent implements OnInit {
           gender: person.gender,
           doc: person.doc
         };
-        this.persons.push(newPerson);
+
+        //Save on storage
         this.personService.addPerson(newPerson);
       });
     });
-
-    //Obtener las que tenemos en storage
-    this.persons.concat(this.personService.returnPersons());
   }
 
   update(): void {

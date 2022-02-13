@@ -1,4 +1,10 @@
 <div class="row mt-5 ms-5 me-5">
+  <div class="p-3 fs-2 text-center">
+    Nueva Persona
+  </div>
+</div>
+
+<div class="row mt-5 ms-5 me-5">
   <div class="col">
     <form (ngSubmit)="savePerson()" #formNewPerson="ngForm">
       <div class="row">
@@ -21,7 +27,7 @@
         </div>
         <div class="col">
           <label for="file" class="form-label">Documento</label>
-          <input class="form-control" type="file" id="file">
+          <input class="form-control" type="file" id="file" disabled>
         </div>
       </div>
       <button type="submit" class="btn btn-primary mt-4 w-100">Guardar</button>
