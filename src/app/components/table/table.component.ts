@@ -31,6 +31,7 @@ export class TableComponent implements OnInit {
           doc: person.doc
         };
         this.persons.push(newPerson);
+        this.personService.addPerson(newPerson);
       });
     });
 
@@ -38,5 +39,8 @@ export class TableComponent implements OnInit {
     this.persons.concat(this.personService.returnPersons());
   }
 
+  update(): void {
+    this.persons = this.personService.returnPersons();
+  }
 
 }

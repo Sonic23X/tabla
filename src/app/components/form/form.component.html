@@ -1,20 +1,20 @@
 <div class="row mt-5 ms-5 me-5">
   <div class="col">
-    <form>
+    <form (ngSubmit)="savePerson()" #formNewPerson="ngForm">
       <div class="row">
         <div class="col">
           <label for="name" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" id="name" #name="ngModel" [(ngModel)]="newPerson.name" [ngModelOptions]="{standalone: true}">
         </div>
         <div class="col">
           <label for="age" class="form-label">Edad</label>
-          <input type="number" class="form-control" id="age">
+          <input type="number" class="form-control" id="age" #age="ngModel" [(ngModel)]="newPerson.age" [ngModelOptions]="{standalone: true}">
         </div>
       </div>
       <div class="row mt-3">
         <div class="col">
           <label for="gender" class="form-label">Genero</label>
-          <select name="gender" id="gender" class="form-select">
+          <select name="gender" id="gender" class="form-select" (change)="gender()" [(ngModel)]="optionSelected">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
           </select>
