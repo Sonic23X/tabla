@@ -34,6 +34,8 @@ export class TableComponent implements OnInit {
       });
     });
 
+    //Obtener las que tenemos en storage
+    this.persons.concat(this.personService.returnPersons());
   }
 
 

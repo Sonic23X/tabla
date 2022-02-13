@@ -1,1 +1,30 @@
-<p>form works!</p>
+<div class="row mt-5 ms-5 me-5">
+  <div class="col">
+    <form>
+      <div class="row">
+        <div class="col">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="col">
+          <label for="age" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="age">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <label for="gender" class="form-label">Genero</label>
+          <select name="gender" id="gender" class="form-select">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="file" class="form-label">Documento</label>
+          <input class="form-control" type="file" id="file">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4 w-100">Guardar</button>
+    </form>
+  </div>
+</div>
