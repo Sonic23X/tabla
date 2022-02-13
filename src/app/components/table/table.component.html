@@ -25,7 +25,10 @@
               {{ person.gender }}
             </td>
             <td>
-              {{ person.doc }}
+              <span *ngIf="person.doc == null; else enlace">Sin enlace</span>
+              <ng-template #enlace>
+                <a href="#" >Documento</a>
+              </ng-template>
             </td>
           </tr>
         </tbody>

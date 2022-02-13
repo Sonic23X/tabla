@@ -21,6 +21,17 @@ export class TableComponent implements OnInit {
 
   getPersons(): void {
     this.personService.getPersons().subscribe(value => {
+      let persons = value.results;
+
+      persons.forEach((person: any) => {
+        let newPerson: Person = {
+          name: person.name,
+          age: person.age,
+          gender: person.gender,
+          doc: person.doc
+        };
+        this.persons.push(newPerson);
+      });
     });
 
   }

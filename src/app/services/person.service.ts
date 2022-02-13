@@ -17,7 +17,7 @@ export class PersonService {
   ) { }
 
   getPersons(): Observable<any> {
-    return this.http.get(`https://randomapi.com/api/v6tmi4dg?key=R9RI-1Y7E-WIDB-J8NL`);
+    return this.http.get(environment.apiUrl);
   }
 
   addPerson(person: Person): void {
